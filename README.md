@@ -1,5 +1,5 @@
 # **The WindowsPath Type** 
-![Module Version](https://img.shields.io/badge/version-0.0.0-teal) ![Test Coverage](https://img.shields.io/badge/coverage-100%25-teal)
+![Module Version](https://img.shields.io/badge/version-0.0.0-teal) ![Test Coverage](https://img.shields.io/badge/coverage-0%25-teal)
 
 
 Author: Fabrice Sanga
