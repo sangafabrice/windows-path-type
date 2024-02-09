@@ -1,4 +1,7 @@
 {
-    "version": "0.0.1",
-    "releaseNotes": ["This release is to test the GitHub action workflow."]
+    "version": "0.0.2",
+    "releaseNotes": [
+        "FIX: PSProvider expands wildcard characters.",
+        "FIX: PSProvider does not expand to Root when relative path starts with slash."
+    ]
 }
