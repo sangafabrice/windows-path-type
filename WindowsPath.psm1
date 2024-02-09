@@ -89,7 +89,7 @@ Class WindowsPath {
 		If (!$Matches.FullPath -and (($Matches.Share -and $Matches.Path) -or $PathToValidate -imatch ('(?<Path>^{0}$)' -f $PathRegExp))) {
 			# Resolve '\' or '/' and append the path segment to the the resolved path string. '\' resolution from a network share location throws an error.
 			# The split operator is to ensure that the provider is not output with the file path. This occurs when the path is network share.
-			$Matches.FullPath = Join-Path "$(Try { Resolve-Path '\' -ErrorAction Stop } Catch { & {
+			$Matches.FullPath = Join-Path "$(Try { ((Resolve-Path '\' -ErrorAction Stop).Drive.Root + '\') -replace '\\\\$','\' } Catch { & {
 				[void] ($PWD.ProviderPath -imatch '(?<Share>\\{2}[^/\\]+\\+[^/\\]+(\\|$))')
 				$Matches.Share
 			} })" $Matches.Path
