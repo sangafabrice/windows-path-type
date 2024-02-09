@@ -30,7 +30,7 @@ Class WindowsPath {
 		$IPv4RegExp = '((\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})'
 		$HostNameRegExp = '([a-z\d\-]+(\.[a-z\d\-]+)*)'
 		$ShareNameRegExp = '([^"/\\\[\]:\|\<\>\+=;,\?\*]+)'
-		$DriveRegExp = '([^;~/\\\.:]+:)'
+		$DriveRegExp = '([^;~/\\\.:\?\*]+:)'
 		$RelativeElmtRegExp = '(~|\.{1,2}|[^"/\\:\|\<\>\?\*]+)'
 		$PathRegExp = '(([/\\]+[^"/\\:\|\<\>\?\*]*)*)'
 		# The general regexp that matches path strings and returns:
