@@ -169,3 +169,34 @@ C:\nwshare\xtest\sub\e1f8a7c2.tmp
 ### Example 5:
 
 The path contains invalid characters.
+
+```powershell
+PS> using module WindowsPath
+PS> [WindowsPath]::new("C:\Batch\test\sub\e1f8a7c2.tmp")
+
+Path
+----
+C:\Batch\test\sub\e1f8a7c2.tmp
+
+PS> # There is a whitespace at the end of a path segment (sub).
+PS> [WindowsPath]::new("C:\Batch\test\sub  \e1f8a7c2.tmp")
+Exception: The string "C:\Batch\test\sub  \e1f8a7c2.tmp" is not a valid Windows path string.
+PS> # The file path string has a wildcard character.
+PS> [WindowsPath]::new("C:\Batch\test\sub\e1f8a7c2?.tmp")
+Exception: The string "C:\Batch\test\sub\e1f8a7c2?.tmp" is not a valid Windows path string.
+PS> # The file path string has a > sign.
+PS> [WindowsPath]::new("C:\Batch\te>st\sub\e1f8a7c2.tmp")
+Exception: The string "C:\Batch\te>st\sub\e1f8a7c2.tmp" is not a valid Windows path string.
+```
+
+Compare the result to `Test-Path` bound with the `IsValid` parameter.
+
+```powershell
+PS> Test-Path "C:\Batch\test\sub  \e1f8a7c2.tmp" -IsValid
+True
+PS> Test-Path "C:\Batch\test\sub\e1f8a7c2?.tmp" -IsValid
+True
+PS> Test-Path "C:\Batch\test\sub>\e1f8a7c2.tmp" -IsValid
+True
+```
+
