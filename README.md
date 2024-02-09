@@ -1,5 +1,5 @@
 # **The WindowsPath Type** 
-![Module Version](https://img.shields.io/badge/version-0.0.1-teal) ![Test Coverage](https://img.shields.io/badge/coverage-100%25-teal)
+![Module Version](https://img.shields.io/badge/version-0.0.2-teal) ![Test Coverage](https://img.shields.io/badge/coverage-100%25-teal)
 [![CD of WindowsPath](https://github.com/sangafabrice/windows-path-type/actions/workflows/publish-module.yaml/badge.svg)](https://github.com/sangafabrice/windows-path-type/actions/workflows/publish-module.yaml)
 
 Author: Fabrice Sanga
